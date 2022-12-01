@@ -1,5 +1,5 @@
 .form-box {
-  background-color: rgb(157, 206, 247);
+  background-color: rgb(84, 160, 221);
   border-radius: 1.5rem;
   box-shadow: 5px 5px 8px rgb(136, 136, 136);
   color: azure;
@@ -13,7 +13,7 @@
 }
 
 .save-btn {
-  background-color: rgb(72, 136, 255);
+  background-color: rgb(37, 96, 206);
   border: none;
   border-radius: 0.75rem;
   margin-top: 1.5rem;

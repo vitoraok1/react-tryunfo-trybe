@@ -23,7 +23,57 @@ class App extends React.Component {
 
     this.setState({
       [name]: value,
-    });
+    }, this.validateForms);
+  };
+
+  validateInputs = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+    } = this.state;
+
+    if (cardName.length > 0
+      && cardDescription.length > 0
+      && cardImage.length > 0
+      && cardRare.length > 0) {
+      return true;
+    }
+  };
+
+  validateAttributes = () => {
+    const {
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+    } = this.state;
+
+    const maxSumAttr = 210;
+    const maxAttr = 90;
+    const minAttr = 0;
+    const sumAttr = parseInt(cardAttr1, 10)
+      + parseInt(cardAttr2, 10)
+      + parseInt(cardAttr3, 10);
+
+    if (parseInt(cardAttr1, 10) >= minAttr
+     && parseInt(cardAttr1, 10) <= maxAttr
+     && parseInt(cardAttr2, 10) >= minAttr
+     && parseInt(cardAttr2, 10) <= maxAttr
+     && parseInt(cardAttr3, 10) >= minAttr
+     && parseInt(cardAttr3, 10) <= maxAttr
+     && sumAttr <= maxSumAttr
+    ) {
+      return true;
+    }
+  };
+
+  validateForms = () => {
+    if (this.validateInputs() && this.validateAttributes()) {
+      this.setState({ isSaveButtonDisabled: false });
+    } else {
+      this.setState({ isSaveButtonDisabled: true });
+    }
   };
 
   render() {
