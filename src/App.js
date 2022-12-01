@@ -81,6 +81,7 @@ class App extends React.Component {
     event.preventDefault();
 
     const {
+      cards,
       cardName,
       cardDescription,
       cardAttr1,
@@ -101,6 +102,10 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
     };
+
+    if (cards.every((card) => (card.hasTrunfo))) {
+      this.setState({ hasTrunfo: true });
+    }
 
     this.setState((prevState) => ({
       cards: [...prevState.cards, cardProp],
