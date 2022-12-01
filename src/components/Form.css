@@ -1,0 +1,38 @@
+.form-box {
+  background-color: rgb(243, 130, 130);
+  border-radius: 1.5rem;
+  box-shadow: 5px 5px 8px rgb(136, 136, 136);
+  color: azure;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.75rem;
+  margin: auto;
+  margin-top: 3rem;
+  max-width: 250px;
+  padding: 3rem;
+}
+
+.save-btn {
+  border-radius: 1.5rem;
+  margin-top: 1.5rem;
+  max-width: 300px;
+  padding: 10px;
+}
+
+input, textarea {
+  border-radius: 0.5rem;
+  height: 1.5rem;
+  width: 100%;
+}
+
+.card-description{
+  height: 4.5rem;
+}
+
+.checkbox-input {
+  width: 1.3rem;
+}
+
+.rarity-tryunfo-label {
+  margin-right: 10px;
+}
