@@ -93,14 +93,15 @@ class Form extends React.Component {
             onChange={ onInputChange }
           />
         </label>
-        <br />
+
         <div>
-          <label htmlFor="cardRare" className="rarity-tryunfo-label">
+          <label htmlFor="cardRare">
             Rarity:
             <select
               data-testid="rare-input"
               id="cardRare"
               name="cardRare"
+              className="rarity-input"
               value={ cardRare }
               onChange={ onInputChange }
             >
@@ -109,8 +110,8 @@ class Form extends React.Component {
               <option value="muito raro">Muito Raro</option>
             </select>
           </label>
-          <br />
-          <label htmlFor="cardTrunfo" className="rarity-tryunfo-label">
+
+          <label htmlFor="cardTrunfo">
             Super Trunfo:
             <input
               data-testid="trunfo-input"

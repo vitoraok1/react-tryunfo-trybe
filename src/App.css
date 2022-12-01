@@ -2,8 +2,12 @@ body {
   background-color: azure;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
+}
+
+h2 {
+  margin-top: 4rem;
 }
 
 header {

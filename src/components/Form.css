@@ -1,5 +1,5 @@
 .form-box {
-  background-color: rgb(243, 130, 130);
+  background-color: rgb(157, 206, 247);
   border-radius: 1.5rem;
   box-shadow: 5px 5px 8px rgb(136, 136, 136);
   color: azure;
@@ -8,21 +8,32 @@
   line-height: 1.75rem;
   margin: auto;
   margin-top: 3rem;
-  max-width: 250px;
+  max-width: 300px;
   padding: 3rem;
 }
 
 .save-btn {
-  border-radius: 1.5rem;
+  background-color: rgb(72, 136, 255);
+  border: none;
+  border-radius: 0.75rem;
   margin-top: 1.5rem;
   max-width: 300px;
-  padding: 10px;
+  padding: 1rem;
 }
 
 input, textarea {
-  border-radius: 0.5rem;
-  height: 1.5rem;
+  border: 3px solid rgb(199, 210, 231);
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  margin: 5px 0;
+  outline: none;
+  padding: 12px 20px;
+  transition: 0.5s;
   width: 100%;
+}
+
+input:focus, textarea:focus {
+  border: 3px solid rgb(72, 136, 255);
 }
 
 .card-description {
@@ -30,9 +41,21 @@ input, textarea {
 }
 
 .checkbox-input {
-  width: 1.3rem;
+  cursor: pointer;
+  width: 2rem;
 }
 
-.rarity-tryunfo-label {
-  margin-right: 10px;
+.rarity-input {
+  border: 3px solid #ccc;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  margin: 5px 0;
+  outline: none;
+  padding: 12px 20px;
+  transition: 0.5s;
+  width: 100%;
+}
+
+.rarity-input:focus {
+  border: 3px solid rgb(72, 136, 255);
 }
