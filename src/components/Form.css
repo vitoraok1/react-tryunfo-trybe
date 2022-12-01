@@ -16,9 +16,16 @@
   background-color: rgb(37, 96, 206);
   border: none;
   border-radius: 0.75rem;
+  color: white;
   margin-top: 1.5rem;
   max-width: 300px;
   padding: 1rem;
+  transition-duration: 0.4s;
+}
+
+.save-btn:hover {
+  background-color: rgb(37, 211, 255);
+  color: white;
 }
 
 input, textarea {

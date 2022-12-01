@@ -5,6 +5,7 @@ import './App.css';
 
 class App extends React.Component {
   state = {
+    cards: [],
     cardName: '',
     cardDescription: '',
     cardAttr1: '0',
@@ -76,6 +77,45 @@ class App extends React.Component {
     }
   };
 
+  saveCard = (event) => {
+    event.preventDefault();
+
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    } = this.state;
+
+    const cardProp = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    };
+
+    this.setState((prevState) => ({
+      cards: [...prevState.cards, cardProp],
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
+    }));
+  };
+
   render() {
     const {
       cardName,
@@ -107,6 +147,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          onSaveButtonClick={ this.saveCard }
           onInputChange={ this.handleChange }
         />
         <h2>Preview</h2>
