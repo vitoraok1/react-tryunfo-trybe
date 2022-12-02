@@ -121,6 +121,16 @@ class App extends React.Component {
     }));
   };
 
+  removeCard = (selectedCard) => {
+    const { cards } = this.state;
+
+    this.setState({ cards: cards.filter((card) => card !== selectedCard) });
+
+    if (selectedCard.cardTrunfo) {
+      this.setState({ hasTrunfo: false });
+    }
+  };
+
   createCard = () => {
     const { cards } = this.state;
 
@@ -137,6 +147,13 @@ class App extends React.Component {
             cardRare={ card.cardRare }
             cardTrunfo={ card.cardTrunfo }
           />
+          <button
+            type="button"
+            data-testid="delete-button"
+            onClick={ () => this.removeCard(card) }
+          >
+            Excluir
+          </button>
         </div>
       ))
     );

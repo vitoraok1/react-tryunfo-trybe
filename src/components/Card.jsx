@@ -17,30 +17,44 @@ class Card extends React.Component {
 
     return (
       <section className="card-render">
-        <p data-testid="name-card">
-          Name:
-          { cardName }
+        <p>
+          <span data-testid="name-card">
+            { cardName }
+          </span>
         </p>
-        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        <p data-testid="description-card">
+        <img
+          data-testid="image-card"
+          src={ cardImage }
+          alt={ cardName }
+        />
+        <p>
           Descrição:
-          { cardDescription }
+          <span data-testid="description-card">
+            { cardDescription }
+          </span>
         </p>
-        <p data-testid="attr1-card">
+        <p>
           Ataque:
-          { cardAttr1 }
+          <span data-testid="attr1-card">
+            {cardAttr1}
+          </span>
         </p>
-        <p data-testid="attr2-card">
+        <p>
           Defesa:
-          { cardAttr2 }
+          <span data-testid="attr2-card">
+            {cardAttr2}
+          </span>
         </p>
-        <p data-testid="attr3-card">
+        <p>
           Especial:
-          { cardAttr3 }
+          <span data-testid="attr3-card">
+            {cardAttr3}
+          </span>
         </p>
-        <p data-testid="rare-card">
-          Raridade:
-          { cardRare }
+        <p>
+          <span data-testid="rare-card" className="rarity">
+            {cardRare}
+          </span>
         </p>
         {
           cardTrunfo ? <p data-testid="trunfo-card">Super Trunfo</p> : null

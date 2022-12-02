@@ -23,7 +23,7 @@ class Form extends React.Component {
       <form className="form-box">
 
         <label htmlFor="cardName">
-          Name:
+          Nome:
           <input
             data-testid="name-input"
             type="text"
@@ -35,7 +35,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="cardDescription">
-          Description:
+          Descrição:
           <textarea
             data-testid="description-input"
             id="cardDescription"
@@ -47,7 +47,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="cardAttr1">
-          Attribute 1:
+          Ataque:
           <input
             data-testid="attr1-input"
             type="number"
@@ -59,7 +59,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="cardAttr2">
-          Attribute 2:
+          Defesa:
           <input
             data-testid="attr2-input"
             type="number"
@@ -71,7 +71,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="cardAttr3">
-          Attribute 3:
+          Especial:
           <input
             data-testid="attr3-input"
             type="number"
@@ -83,7 +83,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="cardImage">
-          Image:
+          Imagem:
           <input
             data-testid="image-input"
             type="text"
@@ -96,7 +96,7 @@ class Form extends React.Component {
 
         <div>
           <label htmlFor="cardRare">
-            Rarity:
+            Raridade:
             <select
               data-testid="rare-input"
               id="cardRare"

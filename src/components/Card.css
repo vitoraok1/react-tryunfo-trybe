@@ -11,3 +11,7 @@
   max-width: 300px;
   padding: 3rem;
 }
+
+.rarity {
+  text-transform: capitalize;
+}
