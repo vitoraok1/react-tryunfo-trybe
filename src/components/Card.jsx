@@ -21,11 +21,19 @@ class Card extends React.Component {
             { cardName }
           </span>
         </p>
-        <img
-          data-testid="image-card"
-          src={ cardImage }
-          alt={ cardName }
-        />
+        <div className="image-section">
+          <img
+            data-testid="image-card"
+            src={ cardImage }
+            alt={ cardName }
+          />
+          <p className="trunfo">
+            {
+              cardTrunfo
+              && <span data-testid="trunfo-card">Super Trunfo</span>
+            }
+          </p>
+        </div>
         <p className="descr-card">
           <span data-testid="description-card">
             { cardDescription }
@@ -53,12 +61,6 @@ class Card extends React.Component {
           <span data-testid="rare-card">
             {cardRare}
           </span>
-        </p>
-        <p>
-          {
-            cardTrunfo
-            && <span data-testid="trunfo-card" className="card-trunfo">Super Trunfo</span>
-          }
         </p>
       </section>
     );

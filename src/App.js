@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Filter from './components/Filter';
 import './App.css';
 
 class App extends React.Component {
@@ -16,6 +17,9 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    nameFilter: '',
+    rareFilter: 'todas',
+    trunfoFilter: false,
   };
 
   handleChange = ({ target }) => {
@@ -134,35 +138,6 @@ class App extends React.Component {
     }
   };
 
-  createCard = () => {
-    const { cards } = this.state;
-
-    return (
-      cards.map((card) => (
-        <div key={ card.cardName } className="preview-card">
-          <Card
-            cardName={ card.cardName }
-            cardDescription={ card.cardDescription }
-            cardAttr1={ card.cardAttr1 }
-            cardAttr2={ card.cardAttr2 }
-            cardAttr3={ card.cardAttr3 }
-            cardImage={ card.cardImage }
-            cardRare={ card.cardRare }
-            cardTrunfo={ card.cardTrunfo }
-          />
-          <button
-            type="button"
-            data-testid="delete-button"
-            className="delete-btn"
-            onClick={ () => this.removeCard(card) }
-          >
-            Excluir
-          </button>
-        </div>
-      ))
-    );
-  };
-
   render() {
     const {
       cards,
@@ -176,6 +151,9 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      nameFilter,
+      rareFilter,
+      trunfoFilter,
     } = this.state;
 
     return (
@@ -214,9 +192,42 @@ class App extends React.Component {
             />
           </div>
         </div>
-        { cards.length > 0 && <h2 className="saved-title">Cartas salvas</h2> }
+        <div>
+          <Filter
+            nameFilter={ nameFilter }
+            rareFilter={ rareFilter }
+            trunfoFilter={ trunfoFilter }
+            onInputChange={ this.handleChange }
+          />
+        </div>
         <div className="saved-section">
-          { this.createCard() }
+          { cards.length > 0 && cards
+            .filter((card) => card.cardName.includes(nameFilter))
+            .filter((card) => (
+              rareFilter === 'todas' ? card : card.cardRare === rareFilter))
+            .filter((card) => (card.cardTrunfo ? card : card.cardTrunfo === trunfoFilter))
+            .map((card) => (
+              <div key={ card.cardName } className="preview-card">
+                <Card
+                  cardName={ card.cardName }
+                  cardDescription={ card.cardDescription }
+                  cardAttr1={ card.cardAttr1 }
+                  cardAttr2={ card.cardAttr2 }
+                  cardAttr3={ card.cardAttr3 }
+                  cardImage={ card.cardImage }
+                  cardRare={ card.cardRare }
+                  cardTrunfo={ card.cardTrunfo }
+                />
+                <button
+                  type="button"
+                  data-testid="delete-button"
+                  className="delete-btn"
+                  onClick={ () => this.removeCard(card) }
+                >
+                  Excluir
+                </button>
+              </div>
+            ))}
         </div>
         <footer>
           Criado por Vitor Aoki, 2022.
