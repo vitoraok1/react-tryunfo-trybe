@@ -1,16 +1,238 @@
-body {
-  background-color: azure;
-}
-
-h1, h2 {
+h1 {
   text-align: center;
 }
 
-h2 {
-  margin-top: 4rem;
+header {
+  background-color: rgb(72, 136, 255);
+  color: azure;
+  margin-bottom: 2rem;
+  padding: 1rem;
 }
 
-header {
-  background-color: rgb(169, 169, 173);
-  padding: 20px;
+.flex-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  background-color: rgb(148, 162, 173);
+  border-radius: 1.5rem;
+  box-shadow: 5px 5px 8px rgb(136, 136, 136);
+  color: azure;
+  line-height: 1.3rem;
+  margin-top: 1.75rem;
+  max-width: 300px;
+  padding: 1.7rem;
+}
+
+.form-container h2 {
+  text-align: center;
+  text-shadow: rgb(54, 54, 54) 0 0 3px;
+}
+
+.save-btn {
+  background-color: rgb(37, 96, 206);
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  margin-top: 1.5rem;
+  max-width: 300px;
+  padding: 1rem;
+  transition-duration: 0.4s;
+  width: 100%;
+}
+
+.save-btn:hover {
+  background-color: rgb(37, 211, 255);
+  color: white;
+}
+
+input, textarea {
+  border: 3px solid rgb(199, 210, 231);
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  margin: 1px 0;
+  outline: none;
+  padding: 8px 10px;
+  transition: 0.5s;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  border: 3px solid rgb(72, 136, 255);
+}
+
+.card-description {
+  height: 4.5rem;
+}
+
+.checkbox-input {
+  cursor: pointer;
+  width: 2rem;
+}
+
+.rarity {
+  text-transform: capitalize;
+}
+
+.rarity-input {
+  border: 3px solid #ccc;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  margin: 1px 0;
+  outline: none;
+  padding: 8px 10px;
+  transition: 0.5s;
+  width: 100%;
+}
+
+.rarity-input:focus {
+  border: 3px solid rgb(72, 136, 255);
+}
+
+.preview-card {
+  background: linear-gradient(0deg, rgb(64, 123, 233) 25%, rgb(179, 179, 179) 90%);
+  border: 10px solid white;
+  border-radius: 1.5rem;
+  box-shadow: 5px 5px 8px rgb(136, 136, 136);
+  color: azure;
+  line-height: 0.2rem;
+  margin-left: 5rem;
+  max-height: 470px;
+  max-width: 260px;
+  outline: 5px solid rgb(168, 59, 59);
+  padding: 1.3rem;
+}
+
+.preview-card img {
+  border-radius: 0.5rem;
+  height: 200px;
+  object-fit: cover;
+  outline: 6px solid white;
+  outline-offset: -6px;
+  width: 260px;
+}
+
+.preview-card:hover {
+  transform: scale(1.02);
+}
+
+footer {
+  background-color: rgb(39, 39, 39);
+  color: azure;
+  margin-top: 7rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.2rem;
+  margin-bottom: 0.7rem;
+  margin-top: 0.02rem;
+  text-align: center;
+  text-shadow: black 0 0 3px;
+}
+
+.descr-card {
+  background-color: rgb(224, 224, 224);
+  border-radius: 0.5rem;
+  color: black;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  max-width: 260px;
+  padding: 0.75rem;
+}
+
+.card-attr1 {
+  background-color: #f73333;
+  border-radius: 0.5rem;
+  color: white;
+  max-width: 260px;
+  padding: 0.5rem;
+}
+
+.value-attr1 {
+  font-weight: 900;
+  margin-left: 165px;
+}
+
+.card-attr2 {
+  background-color: rgb(0, 173, 150);
+  border-radius: 0.5rem;
+  color: white;
+  max-width: 260px;
+  padding: 0.5rem;
+}
+
+.value-attr2 {
+  font-weight: 900;
+  margin-left: 166px;
+}
+
+.card-attr3 {
+  background-color: rgb(12, 0, 175);
+  border-radius: 0.5rem;
+  color: white;
+  max-width: 260px;
+  padding: 0.5rem;
+}
+
+.value-attr3 {
+  font-weight: 900;
+  margin-left: 157px;
+}
+
+.card-rarity {
+  background-color: rgb(224, 224, 224);
+  border-radius: 0.5rem;
+  color: black;
+  font-style: italic;
+  font-weight: 900;
+  max-width: 260px;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.card-trunfo {
+  background-color: rgb(168, 59, 59);
+  border: 3px solid white;
+  border-radius: 0.4rem;
+  color: white;
+  padding: 8px;
+  position: absolute;
+  right: 182px;
+  top: 460px;
+}
+
+.saved-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6rem;
+  width: 100%;
+}
+
+.delete-btn {
+  background-color: rgb(173, 0, 38);
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  margin-top: 2.75rem;
+  max-width: 300px;
+  padding: 1rem;
+  transition-duration: 0.4s;
+  width: 100%;
+}
+
+.delete-btn:hover {
+  background-color: rgb(255, 37, 55);
+  color: white;
+}
+
+.saved-title {
+  margin-top: 6rem;
+  text-align: center;
 }

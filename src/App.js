@@ -77,11 +77,18 @@ class App extends React.Component {
     }
   };
 
+  verifyTrunfo = () => {
+    const { cards } = this.state;
+
+    if (cards.some((card) => (card.cardTrunfo))) {
+      this.setState({ hasTrunfo: true });
+    }
+  };
+
   saveCard = (event) => {
     event.preventDefault();
 
     const {
-      cards,
       cardName,
       cardDescription,
       cardAttr1,
@@ -103,10 +110,6 @@ class App extends React.Component {
       cardTrunfo,
     };
 
-    if (cards.every((card) => (card.hasTrunfo))) {
-      this.setState({ hasTrunfo: true });
-    }
-
     this.setState((prevState) => ({
       cards: [...prevState.cards, cardProp],
       cardName: '',
@@ -118,7 +121,7 @@ class App extends React.Component {
       cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
-    }));
+    }), this.verifyTrunfo);
   };
 
   removeCard = (selectedCard) => {
@@ -136,7 +139,7 @@ class App extends React.Component {
 
     return (
       cards.map((card) => (
-        <div key={ card.cardName }>
+        <div key={ card.cardName } className="preview-card">
           <Card
             cardName={ card.cardName }
             cardDescription={ card.cardDescription }
@@ -150,6 +153,7 @@ class App extends React.Component {
           <button
             type="button"
             data-testid="delete-button"
+            className="delete-btn"
             onClick={ () => this.removeCard(card) }
           >
             Excluir
@@ -161,6 +165,7 @@ class App extends React.Component {
 
   render() {
     const {
+      cards,
       cardName,
       cardDescription,
       cardAttr1,
@@ -178,33 +183,44 @@ class App extends React.Component {
         <header>
           <h1>Tryunfo</h1>
         </header>
-        <h2>Crie a sua carta</h2>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ this.saveCard }
-          onInputChange={ this.handleChange }
-        />
-        <h2>Preview</h2>
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
-        { this.createCard() }
+        <div className="flex-container">
+          <div className="form-container">
+            <h2>Crie a sua carta</h2>
+            <Form
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onSaveButtonClick={ this.saveCard }
+              onInputChange={ this.handleChange }
+            />
+          </div>
+          <div className="preview-card">
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
+        </div>
+        { cards.length > 0 && <h2 className="saved-title">Cartas salvas</h2> }
+        <div className="saved-section">
+          { this.createCard() }
+        </div>
+        <footer>
+          Criado por Vitor Aoki, 2022.
+        </footer>
       </div>
     );
   }

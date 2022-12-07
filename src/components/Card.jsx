@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Card.css';
 
 class Card extends React.Component {
   render() {
@@ -17,7 +16,7 @@ class Card extends React.Component {
 
     return (
       <section className="card-render">
-        <p>
+        <p className="card-name">
           <span data-testid="name-card">
             { cardName }
           </span>
@@ -27,38 +26,40 @@ class Card extends React.Component {
           src={ cardImage }
           alt={ cardName }
         />
-        <p>
-          Descrição:
+        <p className="descr-card">
           <span data-testid="description-card">
             { cardDescription }
           </span>
         </p>
-        <p>
+        <p className="card-attr1">
           Ataque:
-          <span data-testid="attr1-card">
+          <span data-testid="attr1-card" className="value-attr1">
             {cardAttr1}
           </span>
         </p>
-        <p>
+        <p className="card-attr2">
           Defesa:
-          <span data-testid="attr2-card">
+          <span data-testid="attr2-card" className="value-attr2">
             {cardAttr2}
           </span>
         </p>
-        <p>
+        <p className="card-attr3">
           Especial:
-          <span data-testid="attr3-card">
+          <span data-testid="attr3-card" className="value-attr3">
             {cardAttr3}
           </span>
         </p>
-        <p>
-          <span data-testid="rare-card" className="rarity">
+        <p className="card-rarity">
+          <span data-testid="rare-card">
             {cardRare}
           </span>
         </p>
-        {
-          cardTrunfo ? <p data-testid="trunfo-card">Super Trunfo</p> : null
-        }
+        <p>
+          {
+            cardTrunfo
+            && <span data-testid="trunfo-card" className="card-trunfo">Super Trunfo</span>
+          }
+        </p>
       </section>
     );
   }
