@@ -3,6 +3,27 @@
   src: url('./fonts/spider-man.otf') format('opentype');
 }
 
+body {
+  animation: colors 15s ease infinite;
+  background: linear-gradient(45deg, rgb(21, 27, 39), white);
+  background-size: 300% 300%;
+}
+
+@keyframes colors {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 h1 {
   font-family: Spider-Man , Verdana , sans-serif;
   font-size: 5rem;
@@ -29,12 +50,16 @@ header {
 .form-container {
   background-color: rgb(148, 153, 173);
   border-radius: 1.5rem;
-  box-shadow: 5px 5px 8px rgb(136, 136, 136);
   color: azure;
   line-height: 1.3rem;
   margin-top: 1.75rem;
   max-width: 300px;
+  opacity: 0.75;
   padding: 1.7rem;
+}
+
+.form-container:hover {
+  opacity: 1;
 }
 
 .form-container h2 {
@@ -106,7 +131,6 @@ input:focus, textarea:focus {
   background: linear-gradient(0deg, rgb(44, 55, 77) 25%, rgb(148, 153, 173) 90%);
   border: 10px solid white;
   border-radius: 1.5rem;
-  box-shadow: 5px 5px 8px rgb(136, 136, 136);
   color: azure;
   line-height: 0.07rem;
   margin-left: 5rem;
@@ -223,7 +247,6 @@ footer {
 }
 
 .saved-section {
-  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   margin-top: 6rem;
