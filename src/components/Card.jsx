@@ -27,12 +27,10 @@ class Card extends React.Component {
             src={ cardImage }
             alt={ cardName }
           />
-          <p className="trunfo">
-            {
-              cardTrunfo
-              && <span data-testid="trunfo-card">Super Trunfo</span>
-            }
-          </p>
+          {
+            cardTrunfo
+            && <p data-testid="trunfo-card" className="trunfo">Super Trunfo</p>
+          }
         </div>
         <p className="descr-card">
           <span data-testid="description-card">

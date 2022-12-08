@@ -1,9 +1,20 @@
+@font-face {
+  font-family: Spider-Man;
+  src: url('./fonts/spider-man.otf') format('opentype');
+}
+
 h1 {
+  font-family: Spider-Man , Verdana , sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.7rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 header {
-  background-color: rgb(72, 136, 255);
+  background-color: rgb(214, 4, 8);
   color: azure;
   margin-bottom: 2rem;
   padding: 1rem;
@@ -16,7 +27,7 @@ header {
 }
 
 .form-container {
-  background-color: rgb(148, 162, 173);
+  background-color: rgb(148, 153, 173);
   border-radius: 1.5rem;
   box-shadow: 5px 5px 8px rgb(136, 136, 136);
   color: azure;
@@ -60,7 +71,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border: 3px solid rgb(72, 136, 255);
+  border: 3px solid rgb(214, 4, 8);
 }
 
 .card-description {
@@ -88,11 +99,11 @@ input:focus, textarea:focus {
 }
 
 .rarity-input:focus {
-  border: 3px solid rgb(72, 136, 255);
+  border: 3px solid rgb(214, 4, 8);
 }
 
 .preview-card {
-  background: linear-gradient(0deg, rgb(64, 123, 233) 25%, rgb(179, 179, 179) 90%);
+  background: linear-gradient(0deg, rgb(44, 55, 77) 25%, rgb(148, 153, 173) 90%);
   border: 10px solid white;
   border-radius: 1.5rem;
   box-shadow: 5px 5px 8px rgb(136, 136, 136);
@@ -101,7 +112,7 @@ input:focus, textarea:focus {
   margin-left: 5rem;
   max-height: 470px;
   max-width: 260px;
-  outline: 5px solid rgb(168, 59, 59);
+  outline: 5px solid rgb(153, 4, 8);
   padding: 1.3rem;
 }
 
@@ -150,11 +161,11 @@ footer {
 }
 
 .card-attr1 {
-  background-color: #f73333;
+  background-color: rgb(215, 4, 8);
   border-radius: 0.5rem;
   color: white;
   max-width: 260px;
-  padding: 0.5rem;
+  padding: 0.55rem;
 }
 
 .value-attr1 {
@@ -167,7 +178,7 @@ footer {
   border-radius: 0.5rem;
   color: white;
   max-width: 260px;
-  padding: 0.5rem;
+  padding: 0.55rem;
 }
 
 .value-attr2 {
@@ -180,7 +191,7 @@ footer {
   border-radius: 0.5rem;
   color: white;
   max-width: 260px;
-  padding: 0.5rem;
+  padding: 0.55rem;
 }
 
 .value-attr3 {
@@ -201,7 +212,7 @@ footer {
 }
 
 .trunfo {
-  background-color: rgb(168, 59, 59);
+  background-color: rgb(153, 4, 8);
   border: 3px solid white;
   border-radius: 0.3rem;
   color: white;
@@ -212,6 +223,7 @@ footer {
 }
 
 .saved-section {
+  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   margin-top: 6rem;
@@ -219,7 +231,7 @@ footer {
 }
 
 .delete-btn {
-  background-color: rgb(173, 0, 38);
+  background-color: rgb(153, 4, 8);
   border: none;
   border-radius: 0.75rem;
   color: white;
@@ -231,7 +243,7 @@ footer {
 }
 
 .delete-btn:hover {
-  background-color: rgb(255, 37, 55);
+  background-color: rgb(214, 4, 8);
   color: white;
 }
 
@@ -241,11 +253,11 @@ footer {
 }
 
 .search-inputs {
+  margin-top: 8rem;
   text-align: center;
 }
 
 .filtered-title {
-  margin-top: 6rem;
   text-align: center;
 }
 
@@ -272,7 +284,7 @@ footer {
 }
 
 .rarity-input-search:focus {
-  border: 3px solid rgb(72, 136, 255);
+  border: 3px solid rgb(214, 4, 8);
 }
 
 .checkbox-supertrunfo {
@@ -282,5 +294,5 @@ footer {
 }
 
 .image-section {
-  height: 14.3rem;
+  height: 14rem;
 }
