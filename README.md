@@ -20,7 +20,7 @@
 
 ## About The Project
 
-In this project developed during the course of Trybe, it was proposed the development of a game in the style of Tryunfo, in which it will be possible to create new cards and list the existing cards in the deck. All this dynamically, using forms and the state of the application..
+In this project developed during the course of Trybe, it was proposed the development of a game in the style of Tryunfo, in which it will be possible to create new cards and list the existing cards in the deck. All this dynamically, using forms and the state of the application.
 
 ## Built With
 
